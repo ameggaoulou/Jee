@@ -1,0 +1,21 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: r1
+          uri: http://localhost:8081
+          predicates:
+            - Path= /students/**
+            - Path= /grps/**
+        - id: r2
+          uri: http://localhost:8082
+          predicates:
+            - Path= /courses/**
+        - id: r3
+          uri: http://localhost:8083
+          predicates:
+            - Path= /professors/**
+        - id: r4
+          uri: http://localhost:8084
+          predicates:
+             - Path= /absences/**
